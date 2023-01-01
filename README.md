@@ -1,5 +1,5 @@
 # ReactNative-NewsApp
-
+<h1>Download and install app-release.apk file</h1>
 <!-- Title -->
 
 <p align="center">
