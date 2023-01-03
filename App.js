@@ -1,15 +1,20 @@
-import {SafeAreaView, StyleSheet, View} from 'react-native';
-// import Navbar from './components/Navbar';
+import {StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import TrendingNews from './components/TrendingNews';
 import DetailedNews from './components/DetailedNews';
+import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
+import { useEffect } from 'react';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+
+  useEffect(()=>{
+    GoogleSignin.configure();
+  },[])
+
   return (
-    // <SafeAreaView style={styles.container}>
     <NavigationContainer style={styles.container}>
       <Stack.Navigator
         initialRouteName="trending"
@@ -18,8 +23,6 @@ const App = () => {
         <Stack.Screen name="Details" component={DetailedNews} />
       </Stack.Navigator>
     </NavigationContainer>
-    // <TrendingNews />
-    // </SafeAreaView>
   );
 };
 
